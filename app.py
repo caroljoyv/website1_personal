@@ -1,3 +1,4 @@
+from PIL import Images
 import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
@@ -48,3 +49,12 @@ with st.container():
 with right_column:
     st_lottie(lottie, height = 300, key = "coding")
 
+
+
+
+with st.container():
+    st.write("---")
+    st.header("")
+    st.write("##")
+
+    image_column, text_column = st.columns(1,2)
