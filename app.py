@@ -1,4 +1,4 @@
-from PIL import Images
+from PIL import Image
 import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
@@ -24,6 +24,9 @@ with st.container():
 
 #--------Load assets-------------#
 lottie = load_lottieurl("https://assets9.lottiefiles.com/packages/lf20_tr1pjkop.json")
+img1 = Image.open("images/img1.jpg")
+img2 = Image.open("images/img2.jpg")
+
 
 
 
@@ -54,7 +57,32 @@ with right_column:
 
 with st.container():
     st.write("---")
-    st.header("")
+    st.header("Did you know ?")
     st.write("##")
 
-    image_column, text_column = st.columns(1,2)
+    image_column, text_column = st.columns((1,2))
+    with image_column:
+        st.image(img1)
+    with text_column:
+        st.subheader("An AI breakthrough could significantly improve Oculus Quest rendering power")
+        st.write(
+            """
+            Facebook's AI division has found a way to utilize super-resolution rendering to improve Oculus Quest performance. 
+
+            """
+        )
+        st.markdown("[Read article](https://www.androidcentral.com/ai-breakthrough-could-significantly-improve-oculus-quest-rendering-power)")
+        
+    image_column, text_column = st.columns((1,2))
+    with image_column:
+        st.image(img2)
+    with text_column:
+        st.subheader("The AI copyright dilemma is probably a decade of lawsuits to come.")
+        st.write(
+            """
+            Alex Heath’s latest Command Line newsletter is a dispatch from the Cerebral Valley AI conference, where everyone knew they were playing fast and loose with copyright law, with no answers on how to handle the problem.
+            """
+        )
+        st.markdown("[Read article](https://www.theverge.com/2023/4/1/23666153/the-ai-copyright-dilemma-is-probably-a-decade-of-lawsuits-to-come)")
+    
+
